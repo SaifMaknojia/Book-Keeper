@@ -11,7 +11,9 @@ const BookTable = () => {
   const handleDelete = (data) => {
     const updatedArray = book.filter((book) => book._id !== data._id);
     axios
-      .delete(`http://127.0.0.1:8000/api/v1/books/${data._id}`)
+      .delete(
+        `https://booklistnodejsapi.herokuapp.com/api/v1/books/${data._id}`
+      )
       .then(() => setBook(updatedArray));
   };
 

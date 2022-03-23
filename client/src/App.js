@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/books")
+      .get("https://booklistnodejsapi.herokuapp.com/api/v1/books")
       .then((data) => setBook(data.data.book))
       .catch((err) => console.log(err));
   }, []);

@@ -27,7 +27,7 @@ const BookForm = () => {
 
   const handleAdd = () => {
     axios
-      .post("http://127.0.0.1:8000/api/v1/books", {
+      .post("https://booklistnodejsapi.herokuapp.com/api/v1/books", {
         title: selectedBook.title,
         author: selectedBook.author,
         status: selectedBook.status
@@ -44,11 +44,14 @@ const BookForm = () => {
   const handleUpdate = () => {
     setBookFlag(false);
     axios
-      .patch(`http://127.0.0.1:8000/api/v1/books/${selectedBook._id}`, {
-        title: selectedBook.title,
-        author: selectedBook.author,
-        status: selectedBook.status
-      })
+      .patch(
+        `https://booklistnodejsapi.herokuapp.com/api/v1/books/${selectedBook._id}`,
+        {
+          title: selectedBook.title,
+          author: selectedBook.author,
+          status: selectedBook.status
+        }
+      )
       .then((data) => {
         setBook(
           book.map((b) => {
