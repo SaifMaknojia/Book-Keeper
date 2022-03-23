@@ -16,6 +16,6 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.listen(8000, () => {
-  console.log("server started at", 8000);
+app.listen(process.env.PORT || 8000, () => {
+  console.log("server started at", process.env.PORT);
 });
