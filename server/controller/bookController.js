@@ -37,7 +37,10 @@ exports.updateBook = async (req, res) => {
       new: true,
       runValidators: true
     });
-    res.set("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.set(
+      "Access-Control-Allow-Origin",
+      "https://booklistnodejsapi.herokuapp.com/api/v1/books"
+    );
     res.status(200).json({
       status: "Success",
       book
